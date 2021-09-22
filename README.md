@@ -32,3 +32,13 @@ some-element {
 ## The CSS box model
 
 - Each element in an HTML document can be thought of as an rectangular box
+- The standard box model describes the space an element takes up
+- Each box has four edges: margin edge >> border edge >> padding edge >> ontent edge
+
+- Think of padding edge as a extending of the content
+
+
+
+
+
+

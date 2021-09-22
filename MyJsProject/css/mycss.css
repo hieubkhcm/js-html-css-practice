@@ -1,0 +1,20 @@
+@charset "ISO-8859-1";
+
+/*To comment out the sentence in css file, wrap it in*/
+
+body {
+	background-color: #80ffff;
+}
+
+section{
+	background-color: orange;
+}
+
+p {
+	font-size:25px;
+}
+
+/*list li duoc dat trong paragraph a se ko bi anh huong voi p, moi tag se nhan css rieng re voi nhau*/
+li {
+	font-size: 22px;
+}
