@@ -3,7 +3,7 @@
 /*To comment out the sentence in css file, wrap it in*/
 
 body {
-	background-color: #80ffff;
+	background-color: #808080;
 }
 
 section{
@@ -12,9 +12,52 @@ section{
 
 p {
 	font-size:25px;
+	background-color: teal;
+	padding-top : 30px;
+	padding-right : 30px;
+	padding-left : 30px;
+	padding-bottom : 30px;
+	margin-left: 50px;/*margin is the space that will added from the very edge of the webpage to the left*/
+	border-left: 100px;/*seem to have no effect to the appearance*/
 }
 
 /*list li duoc dat trong paragraph a se ko bi anh huong voi p, moi tag se nhan css rieng re voi nhau*/
 li {
 	font-size: 22px;
 }
+
+h1 {
+	background-color: teal;
+	text-align: center;
+	width :1000px; /*do rong cua cai o se chua cai header h1*/
+}
+
+body {
+	color: white; /*cai nay se ap dung len toan bo children cua body :: inheritance*/
+}
+
+article {
+	color : orange; /*default is color : inherit*/
+}
+
+/*lam sao de chi dinh mot minh p trong article element sang mau khac*/
+article p {
+	background-color: black;
+}
+
+/*chung ta co the inherit 2 lan -> checking html render, chi co p thu hai cuar article dc ap dung rule nay*/
+article henry   p {
+	background-color: purple;
+}
+body ul li img {
+	width : 300px;
+	height: auto;
+}
+img{
+	width : 100px;
+	height: auto;
+}
+/* =============================================================== */
+
+
+
