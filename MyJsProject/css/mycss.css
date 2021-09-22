@@ -6,9 +6,17 @@ body {
 	background-color: #808080;
 }
 
-section{
-	background-color: orange;
+section div{
+	color: red;
+	background-color: black;
 }
+
+/*chi chon di theo mot huong section -> div -> h4 la được áp dụng <=> chi cái trên là thay đổi*/
+section > div > h4 {
+	color: red;
+	background-color: green;
+}
+
 
 p {
 	font-size:25px;
@@ -45,8 +53,8 @@ article p {
 	background-color: black;
 }
 
-/*chung ta co the inherit 2 lan -> checking html render, chi co p thu hai cuar article dc ap dung rule nay*/
-article henry   p {
+/*chung ta co the inherit 2 lan -> checking html render, chi co p thu hai cua article dc ap dung rule nay*/
+article henry p {
 	background-color: purple;
 }
 body ul li img {
