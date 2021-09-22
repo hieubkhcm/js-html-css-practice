@@ -28,3 +28,7 @@ some-element {
 	background-color : red;	
 	font-size : 50px;
 }
+
+## The CSS box model
+
+- Each element in an HTML document can be thought of as an rectangular box
