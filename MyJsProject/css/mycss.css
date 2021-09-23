@@ -76,15 +76,26 @@ div.green-background {
 }
 
 /*cách để áp dụng rule cho một element vơi ID*/
-/*cách dùng id y như dùng cho element trừ việc nó chỉ đích danh element nào được áp dụng rule*/
+/*cách dùng id y như dùng cho element trừ việc nó chỉ đích danh element nào được áp dụng rule 
+nghĩa là bao gồm cả ví dụ như div#myid etc*/
 #myid > h4{
 	background-color: brown;
 }
 
+/*Specificify
+Class is id is more specific than class, class is more specific than type selector >
+thằng nào more specific thằng đó sẽ override mấy thằng kia*/
+body > div#example > p {
+	height: 100px;
+	width: 1000px;
+	background-color: lightblue;
+	color: black;
+	
+}
 
-
-
-
+.example-class {
+	background-color: orange;
+}
 
 
 
