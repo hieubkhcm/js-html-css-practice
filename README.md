@@ -37,6 +37,13 @@ some-element {
 
 - Think of padding edge as a extending of the content
 
+## CSS Specificity
+
+- Speficifity is super important with CSS
+0. Type selector (e.g. h1, div, header, p)
+1. Class selector (e.g. .example-class)
+2. ID selector (e.g. #exampleID) 
+
 
 
 
