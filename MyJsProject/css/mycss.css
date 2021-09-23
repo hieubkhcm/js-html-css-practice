@@ -86,8 +86,8 @@ nghĩa là bao gồm cả ví dụ như div#myid etc*/
 Class is id is more specific than class, class is more specific than type selector >
 thằng nào more specific thằng đó sẽ override mấy thằng kia*/
 body > div#example > p {
-	height: 100px;
-	width: 1000px;
+	height: 30px;
+	width: 300px;
 	background-color: lightblue;
 	color: black;
 	
@@ -96,6 +96,48 @@ body > div#example > p {
 .example-class {
 	background-color: orange;
 }
+
+/*multi element*/
+
+#example1 p,h3 {
+	color: black;
+	background-color: lightblue;
+	height: 30px;
+	width: 300px;
+	font-size: 20px;
+	margin-left: 25px;
+	padding-left: 25px;
+}
+
+/*choosing from list with css first-child, last-child*/
+#example1 p:first-child {
+	color:green;
+}
+
+#someIDofanImage:hover {
+	/*filter:invert(100%);*/
+	transform: scale(2);
+}
+
+/*sibling in css p+p h3+h4 div+section etc nghia la may thang anh chi em dung canh nhau, tui muon hai thang p 
+lien tiep thi thang thu hai duoc boi do, y nghia no la nhu vay*/
+#example1 p+p {
+	color: red;
+}
+
+/*testing the rule upon nav element*/
+nav ul,li{
+	height: 50px;
+	background-color: teal;
+	width: 50%;
+	list-style: none;
+	padding-left: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+
+
 
 
 
