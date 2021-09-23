@@ -1,32 +1,32 @@
 @charset "ISO-8859-1";
 
 /*To comment out the sentence in css file, wrap it in*/
-
 body {
 	background-color: #808080;
 }
 
-section div{
+section div {
 	color: red;
 	background-color: black;
 }
 
-/*chi chon di theo mot huong section -> div -> h4 la được áp dụng <=> chi cái trên là thay đổi*/
-section > div > h4 {
+/*chi chon di theo mot huong section -> div -> h4 la ÄÆ°á»£c Ã¡p dá»¥ng <=> chi cÃ¡i trÃªn lÃ  thay Äá»i*/
+section>div>h4 {
 	color: red;
 	background-color: green;
 }
 
-
+/*phan biet giua div.class vaf div .class : 1 cai la cung 1 layer 1 cai la parent-child relationship*/
 p {
-	font-size:25px;
+	font-size: 25px;
 	background-color: teal;
-	padding-top : 30px;
-	padding-right : 30px;
-	padding-left : 30px;
-	padding-bottom : 30px;
-	margin-left: 50px;/*margin is the space that will added from the very edge of the webpage to the left*/
-	border-left: 100px;/*seem to have no effect to the appearance*/
+	padding-top: 30px;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-bottom: 30px;
+	margin-left: 50px;
+	/*margin is the space that will added from the very edge of the webpage to the left*/
+	border-left: 100px; /*seem to have no effect to the appearance*/
 }
 
 /*list li duoc dat trong paragraph a se ko bi anh huong voi p, moi tag se nhan css rieng re voi nhau*/
@@ -37,15 +37,16 @@ li {
 h1 {
 	background-color: teal;
 	text-align: center;
-	width :1000px; /*do rong cua cai o se chua cai header h1*/
+	width: 1000px; /*do rong cua cai o se chua cai header h1*/
 }
 
 body {
-	color: white; /*cai nay se ap dung len toan bo children cua body :: inheritance*/
+	color: white;
+	/*cai nay se ap dung len toan bo children cua body :: inheritance*/
 }
 
 article {
-	color : orange; /*default is color : inherit*/
+	color: orange; /*default is color : inherit*/
 }
 
 /*lam sao de chi dinh mot minh p trong article element sang mau khac*/
@@ -57,15 +58,38 @@ article p {
 article henry p {
 	background-color: purple;
 }
+
 body ul li img {
-	width : 300px;
+	width: 300px;
 	height: auto;
 }
-img{
-	width : 100px;
+
+img {
+	width: 100px;
 	height: auto;
 }
 /* =============================================================== */
+
+/*cach chi dinh div.class de ap dung mot rule -- note div .class khac voi div.class*/
+div.green-background {
+	background-color: limegreen;
+}
+
+/*cách để áp dụng rule cho một element vơi ID*/
+/*cách dùng id y như dùng cho element trừ việc nó chỉ đích danh element nào được áp dụng rule*/
+#myid > h4{
+	background-color: brown;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
