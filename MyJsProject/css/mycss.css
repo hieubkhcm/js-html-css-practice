@@ -134,11 +134,15 @@ nav ul,li{
 	padding-left: 50px;
 	display: flex;
 	justify-content: center;
+	line-height: 50px;
 }
 
+/*short-hand: cach viet ngan gon*/
+nav {
+	margin: 100px 100px;
+}
 
-
-
+/*flex-flow for element :: de tuong thich voi cac kich thuoc browser khac nhau*/
 
 
 
