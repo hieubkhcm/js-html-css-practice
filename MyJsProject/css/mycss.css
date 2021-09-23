@@ -10,13 +10,36 @@ section div {
 	background-color: black;
 }
 
+
 /*chi chon di theo mot huong section -> div -> h4 la ÄÆ°á»£c Ã¡p dá»¥ng <=> chi cÃ¡i trÃªn lÃ  thay Äá»i*/
+
+.example-div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	background-color: blue;
+}
+
+
+.green-background {
+	background-color: pink;
+}
+
+/*cach dung inherit cua class cung giong nhu cach dung cac element thong thuong*/
+.green-background .cursive-h4{
+	font-family: cursive;
+}
+
+/*chi chon di theo mot huong section -> div -> h4 la được áp dụng <=> chi cái trên là thay đổi
+> : selector*/
+
 section>div>h4 {
 	color: red;
 	background-color: green;
 }
 
+
 /*phan biet giua div.class vaf div .class : 1 cai la cung 1 layer 1 cai la parent-child relationship*/
+
 p {
 	font-size: 25px;
 	background-color: teal;
@@ -68,6 +91,7 @@ img {
 	width: 100px;
 	height: auto;
 }
+
 /* =============================================================== */
 
 /*cach chi dinh div.class de ap dung mot rule -- note div .class khac voi div.class*/
@@ -149,4 +173,7 @@ nav {
 
 
 
+
+
+/* =============================================================== */
 
