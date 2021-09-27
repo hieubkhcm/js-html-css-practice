@@ -106,7 +106,7 @@ class donutContructor1 {
         };
     }
 }
-
+ 
 var coconutDonut = new donutContructor("coconut", false, 8, true);
 console.log(coconutDonut);
 coconutDonut.getType();
