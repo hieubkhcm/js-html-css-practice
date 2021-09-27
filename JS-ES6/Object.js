@@ -52,13 +52,72 @@ console.log(testVal);
 
 /*test thu cung key trong 1 object*/
 /*engine se ignore cai declare thu 2*/
+/*function trong object + test kieu design object cua Java*/
 var donut = {
+	type : "coconut",
+	glazed : true,
 	sweetness : "10",
 	sweetness : "8",
+	hasChocolate : true,
 	shape : "round",
-	shape : "triangle"
+	shape : "triangle",
+	sayHi : function() {
+		console.log("Hi");
+	},
+	getType : function(){
+		console.log("Type : " + this.type)
+	},
+	getSweetness : function() {
+		console.log("Sweetness : " + this.sweetness);
+	},
 }
 console.log(donut);
+donut.sayHi();
+donut.getType();
+donut.getSweetness();
+
+/*mot constructor trong js giong nhu mot class trong java - goi la contructor pattern
+tuy nhien no giong y nhu class trong java --> eclipse recommend chuyen thanh cach duoi
+cach dung y chang nhau*/
+function donutContructor(type, glazed, sweetness, hasChocolate) {
+	this.type = type;
+	this.glazed = glazed;
+	this.sweetness = sweetness; 
+	this. hasChocolate = hasChocolate;
+	this.getType = function() {
+		console.log("Type: " + this.type);
+	};
+	this.getSweetness = function() {
+		console.log("Sweetness of " + this.type + " is " + this.sweetness);
+	};
+}
+/*mot cach tuong duong cach tren voi cach khai bao class*/
+class donutContructor1 {
+    constructor(type, glazed, sweetness, hasChocolate) {
+        this.type = type;
+        this.glazed = glazed;
+        this.sweetness = sweetness;
+        this.hasChocolate = hasChocolate;
+        this.getType = function() {
+            console.log("Type: " + this.type);
+        };
+        this.getSweetness = function() {
+            console.log("Sweetness of " + this.type + " is " + this.sweetness);
+        };
+    }
+}
+
+var coconutDonut = new donutContructor("coconut", false, 8, true);
+console.log(coconutDonut);
+coconutDonut.getType();
+coconutDonut.getSweetness();
+
+var vanillaDonut = new donutContructor1("vanilla", true, 10, false);
+vanillaDonut.getSweetness();
+
+/*them property vao cho 1 object da ton tai*/
+coconutDonut.tasteGood = true;
+console.log(coconutDonut);
 
 
 
