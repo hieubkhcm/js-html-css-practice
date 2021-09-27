@@ -4,6 +4,9 @@
  
 console.log(10 + 6);
 console.log(Math.PI);
+/*phân biệt giữa == và ===, === so sánh cả type và value, nên gọi là strict equality*/
+console.log(1 == '1');
+console.log(1 === '1');
 console.log(parseInt("10", 2) + 213);
 console.log(isNaN("Hello"));
 
