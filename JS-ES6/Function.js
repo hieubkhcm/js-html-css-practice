@@ -104,14 +104,28 @@ let userNameList = users.map((user) =>  {
 console.log(userNameList);
 
 //shortest version tuong duong function ==> tai su dung duoc
-const userNameListShortestCmd = myArr => myArr.map(user => user.name);
+const userNameListShortestCmd = myArr => 
+	myArr.map(user => user.name);
 console.log(userNameListShortestCmd(users));
 
+/*number.filter()*/
+const numbers = [1,2,3,4,5,6,7,8,9,10];
+/*auto iteration through the array*/
+const filteredNumbers = numbers.filter( num => num%2 !== 0); //filtered odd numbers
+console.log(filteredNumbers);
 
+const numberDoubler = num => {
+	const numberContainer = [];
+	num.forEach( n => {
+		const double = n*2;
+		numberContainer.push(double);
+	})	
+	return numberContainer;
+}
 
-
-
-
+console.log(numberDoubler(numbers));
+const moreNumbers = [5, 10, 15, 20];
+console.log(numberDoubler(moreNumbers));
 
 
 
