@@ -128,6 +128,136 @@ const moreNumbers = [5, 10, 15, 20];
 console.log(numberDoubler(moreNumbers));
 
 
+/*default value for functions*/
+function numberMultiplier(x,y){
+	x = x || 5;
+	y = y || 10;
+	return x * y;
+}
+console.log(numberMultiplier());
+console.log(numberMultiplier(2));
+console.log(numberMultiplier(2,3));
+/*shorter default values for functions*/
+function numberMultiplierShorter(x = 5, y = 10){
+	return x * y;
+}
+console.log(numberMultiplierShorter());
+console.log(numberMultiplierShorter(2));
+console.log(numberMultiplierShorter(2,3));
+
+/*a small practise on default Object*/
+const bankAccount = {
+	canSpendMoney : true,
+	balance : 100,
+}
+
+function purchaseItem(price, account = bankAccount ){
+	if (account.canSpendMoney){
+		account.balance -= price;
+		if (account.balance <= 0) {
+			account.canSpendMoney = false;
+		}
+		return true;
+	} else{
+		return false;
+	}
+}
+
+console.log(bankAccount);
+console.log("used default Object: " + purchaseItem(50));
+console.log(bankAccount);
+console.log("used default Object: " + purchaseItem(40));
+console.log(bankAccount);
+console.log("used default Object: " + purchaseItem(20));
+console.log(bankAccount);
+console.log("used default Object: " + purchaseItem(10));
+console.log(bankAccount);
+
+console.log("Not used default Object: " + purchaseItem(40, 
+	{
+		canSpendMoney : true,
+		balance : 100,
+	}
+));
+
+/*logging arguments*/
+function logAllArguments (x, y, z) {
+	console.log(arguments);
+} 
+
+logAllArguments(1,2,3);
+logAllArguments(1,2,3,4,5,6); /*nhu vay se khien input argument bi du, nhung ko crash*/
+/*[Arguments] { '0': 1, '1': 2, '2': 3 }
+suy ra arguments cung la mot Array object*/
+
+/*de tranh so luong argument bi vuot qua argc cua function (JS ko kiem tra argc cua prototype)*/
+function logAllArgumentsTestInputArgc (x, y, z) {
+	const argSlice = Array.prototype.slice.call(arguments, logAllArgumentsTestInputArgc.length);
+	console.log(argSlice);
+} 
+logAllArgumentsTestInputArgc(1,2,3);
+logAllArgumentsTestInputArgc(1,2,3,4,5,6); //4,5,6 la phan bi cat ra, tuy nhien arguments van khong doi
+
+/*mot cach khac de phan tach cac arguments ko dung den*/
+function logAllArgumentsWithNums (x, y, ...nums) {
+	console.log(nums);
+} 
+logAllArgumentsWithNums(1,2,3);
+logAllArgumentsWithNums(1,2,3,4,5,6); 
+
+/*understanding more about this*/
+function Dog(year, breed) {
+	this.age = year;
+	this.type = breed;
+	console.log(this);
+}
+
+const chiHuaHua = new Dog(4, "Golden Chaser");
+
+/*some hacking solution for this. */
+function thisDog(year, breed) {
+	const that = this; //dung cach nay de tranh viec this cua function dung sai thanh this cua window
+	that.age = year;
+	that.type = breed;
+	const refreshId = setInterval( () => {
+		//neu dung function() 
+		//dung this o day se tro thanh this cua window
+		//nhung short hand () => {} thi lai khong sao, meo hieu????
+		console.log(this);		
+		that.age++;
+//		console.log(that);	
+		if (that.age > 7) 
+			clearInterval(refreshId);	
+	},2000);
+}
+
+const chiHuaHuaIns = new thisDog(4, "Golden Chaser");
+
+//const userInput = prompt("This is a prompt, Enter any key");
+//console.log("userInput = " + userInput);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
