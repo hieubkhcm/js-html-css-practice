@@ -20,7 +20,7 @@ for (let scanner in myObject)
 }
 
 
-/*scanning through array*/
+/*scanning through array with for-in*/
 console.log("\n\nTesting Array ===================");
 const myArray = ["Henry","Tina", "Banh Beo"];
 for (let scanner in myArray)
@@ -30,6 +30,7 @@ for (let scanner in myArray)
 }
 
 console.log("\n\nTesting For Of ===================");
+
 //Thuc ra bat cu Object nao la extends tu iterable deu xai for-of duoc
 for (let scanner of myArray)
 {
@@ -42,6 +43,13 @@ console.log("\n\nTesting forEach() ===============");
 myArray.forEach((mem) => {
 	console.log(mem);
 })
+
+
+
+
+
+
+
 
 
 
