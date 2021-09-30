@@ -42,15 +42,33 @@ console.log("LOG # 9 ");
 console.log(ID);
 /*from here ID can be used as object that will be reflected on html file*/
 
+/*inject css code to html*/
+const myDiv = document.getElementById("myDiv");
 
+console.log(myDiv);
+console.log(myDiv.style);
+myDiv.style.color = "green"; 
+//khi render no se tu dong insert
+//de tro thanh <div id="myDiv" style="color: green;">Some dummy text</div> 
+//recall: cach nay goi la inline style
 
+myDiv.style.fontSize = "30px";
 
+const myQueryDiv = document.querySelector("div");
+myQueryDiv.style.color = "red";
+//kieu nay se override myDiv ben tren
+//luu y chi div dau tien duoc ap dung rule
+//div thu 2 ko duoc ap dung rule
 
+//test query css class in JS
+const myQueryAllDiv = document.querySelectorAll(".henry-class");
+console.log(myQueryAllDiv);
+console.log(myQueryAllDiv.length);
 
-
-
-
-
+//iterating through the element
+for(const ite of myQueryAllDiv){
+	ite.style.color = "orange";
+}
 
 
 
