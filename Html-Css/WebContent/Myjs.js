@@ -70,6 +70,39 @@ for(const ite of myQueryAllDiv){
 	ite.style.color = "orange";
 }
 
+//JS DOM có thể query được cả parent của node => ko có giới hạn về scope ở DOM
+const myChildNode = document. querySelector(".henry-class");
+console.log(myChildNode);
+console.log(myChildNode.parentNode); //parent cua span la p
+console.log(myChildNode.parentNode.parentNode); //parent cua p la body, rất hợp lý đúng không  
+
+myChildNode.parentNode.style.backgroundColor = "teal";//this will apply to the p element (the parent)
+
+const myParentDiv = document.getElementById("parentNodeOfSpan");
+console.log(myParentDiv);
+console.log(myParentDiv.childNodes);
+console.log(myParentDiv.childNodes[0].parentNode); //traverse up hay down gi cung duoc, kha la thoai mai
+
+//query the id of the element
+console.log("myParentDiv.id = " + myParentDiv.id); 
+
+//and modify it as will
+myParentDiv.id = "myMommyDiv";
+console.log("myParentDiv.id = " + myParentDiv.id); 
+
+//JS co the create element trong html duoc luon .createElement("P") chang han
+//suy cho cung HTML cung chi la mot file text thoi, manipulate toi muc do nao ma cha duoc
+
+
+
+
+
+
+
+
+
+
+
 
 
 
