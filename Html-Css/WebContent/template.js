@@ -94,11 +94,3 @@ pizzaDiv.innerHTML = myPizzaDiv;
 
 
 
-
-
-
-
-
-
-
-
