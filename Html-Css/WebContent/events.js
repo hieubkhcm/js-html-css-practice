@@ -140,12 +140,43 @@ function addToList(event){
 	myForm.reset(); // lenh nay de clean gia tri trong cai o input
 }
 
+//huong dan cach bat keydown :: keydown nghia la phim duoc nhap vao nha
+// khong phai la arrow down dau
+document.addEventListener("keydown", function(event){
+	console.log(event.keyCode);
+});
 
+//keyup la event khi ma mot nut duoc nha ra, 
+/*document.addEventListener("keyup", function(event){
+	console.log(event.keyCode);
+});*/
 
+const div3 = document.getElementById("div3");
+const para = div3.querySelector("p");
+const textArea = div3.querySelector("textArea");
+const paraTest = "User is typing";
+let timer;
 
+textArea.addEventListener("keydown", addText);
+textArea.addEventListener("keyup", removeText);
 
+function addText (event) {
+	para.innerText= paraTest;
+}
 
-
+function removeText (event) {
+	clearTimeout(timer); //clearTimeout se vo hieu hoa timer neu nhu timer do dang chay
+	//con khong co thi cung khong sao. ==> neu nhu keyup lien tuc thi timer se dc set lai
+	//lien tuc, chi co last time no moi doi 1000ms roi remove para.innerText= ""
+	
+	timer = setTimeout(() => {
+		para.innerText= ""; 
+	}, 1000); // setTimeOut hoat dong nhu sau: no se doi 1000ms roi moi chay cai function
+	//function do la xoa cai gia tri trong cai o para (paragraph do)
+	//khi user van con dang typing thi keyUp dc trigger lien tuc 
+	
+}
+ 
 
 
 

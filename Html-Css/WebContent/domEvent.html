@@ -18,10 +18,62 @@
 </style>
 
 
+<!-- day la comment cua HTML -->
+<script type="text/javascript">
+//day la comment cua JS
+
+//cho nay co the dung de inject js code
+//Tuy nhien neu grab ID tai day se tao ra loi, do ID chua dc tao ra boi engine V8,
+//ID nam o body co ma, no cung compile tuan tu y nhu nhung ngon ngu khac thoi
+
+//cach thu nhat la mang script xuong cuoi cung, sau khi DOM da load xong <=> cach lam cua 
+//may trang web chen code tu dong
+
+//cach thu hai nhu sau
+
+//script nay se doi cho toi khi DOM load xong
+document.addEventListener("DOMContentLoaded", addToLog );
+
+window.addEventListener("load", checkImageSize)
+
+function addToLog(){
+	console.log("this sentence appear after the DOM content is loaded and parsed")
+	const myLog = document.getElementById("log")
+	myLog.innerHTML += "<h1> Hello </h1>";
+	
+	//const myImg = document.getElementById("myImg")
+	//	console.log("height: " + myImg.offsetHeight + " width: "  + myImg.offsetWidth);
+	//cách này có thể fail:: ko nhìn ra dc height và width :: do có thể images
+	//chưa được load vào memory
+	//height: 0 width: 0
+};
+
+
+//cách này giải quyết được vấn đề trên, đó là nó sẽ đợi cho tới khi data được load
+//rồi mới gọi tới function checkImageSize ở dưới
+// >> console sẽ nhìn thấy như sau : height: 426 width: 640
+function checkImageSize(){
+	const myImg = document.getElementById("myImg")
+	console.log("height: " + myImg.offsetHeight + " width: "  + myImg.offsetWidth);
+	
+	//chinh mot ty nhin cho cai hinh no do ghe
+	myImg.style.width = "200px";// full hd thi se co dimension 1920px x 1080px
+	myImg.style.height = "auto";
+};
+
+
+</script>
 
 </head>
 <body>
+
+	<div id="log">
+		<img id="myImg" src="https://i.imgur.com/jtdxrZ6.jpg"  />
+	
+	</div>
+
 	<div id="clicky">This is a clicky div</div>
+	
 	<button id="myButton">Button (click here)</button>
 	<br>
 	<button id="myClickableButton">Changable Button (click here)</button>
@@ -53,13 +105,18 @@
 			google.com</a>
 
 		<form id="myForm" method="post">
-			<input id = "myInput"/><br> <!-- cái này là cái tạo ra ô chữ nhật của form đó nha -->
-			<button type="submit">Submit</button> <!-- cái này tạo ra cái nút button nè -->
+			<input id="myInput" /><br>
+			<!-- cái này là cái tạo ra ô chữ nhật của form đó nha -->
+			<button type="submit">Submit</button>
+			<!-- cái này tạo ra cái nút button nè -->
 		</form>
 
 	</div>
 
-
+	<div id="div3">
+		<p>User is typing</p>
+		<textarea></textarea>
+	</div>
 
 
 
