@@ -27,9 +27,44 @@ function MyExp(msg) {
 	}
 }
 
-throw new MyExp("hey, this is invalid");
+try {
+	throw new MyExp("hey, this is invalid");
+}
+catch (e){
+	console.log(e);
+}
 
 
+
+
+//most simple try catch
+try {
+	throw "Exception!";
+}
+catch (e){
+	console.log(e);
+}
+
+let myNum = 20;
+
+function checkIfNum(num) {
+	if (isNaN(num)){
+		throw "not a number";
+	}
+	else
+	{
+		console.log("yes, it is a number");
+	}
+}
+
+
+try {
+	checkIfNum("String");
+}
+catch (catchID){
+	console.log("Catch an error " + catchID);
+}
+checkIfNum("String");
 
 
 
