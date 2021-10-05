@@ -70,9 +70,12 @@ class Person { //class la mot cach khoa hoc hon de khoi tao Object, thay vi dung
 		this.age = age;
 	};
 	greetings(){
-		console.log("This is method of class Person");
-		return "this is a return of Person.greetings()";
+		//console.log("This is method of class Person");
+		return "this is a return of Person.greetings";
 	};
+	static sayHey(){
+		console.log("Hey I am static class of Person");
+	}
 }
 
 const bob = new Person("Bob", 30);
@@ -98,7 +101,8 @@ class Employee extends Person {
 	}
 	sayGreeting(){
 		const parentString = super.greetings();
-		console.log(`${this.name} is calling ${parentString}`);
+		console.log(parentString);
+		console.log(`${this.name} is calling ${parentString}`); //invoke parentString that bai
 	};
 }
 
@@ -109,6 +113,75 @@ bard.testGreeting();
 bard.greetings();
 
 bard.sayGreeting();
+
+//constructor co argument la object
+class Customer extends Person {
+	constructor( {name = "customer", age= "n/a", contactMethod }  ) //name = "customer", age= "n/a" là các giá trị default 
+	//nếu lúc tạo instance không khai báo trị cho 2 properties này 
+	{ 
+		super(name, age); //call constructor cua parent
+		
+		this.contactMethod = contactMethod; //parsing vao data cua object
+		this.accountCredit = null; //parsing vao data cua object
+	}
+	addCredit(amount)
+	{
+		this.accountCredit += amount;
+	}
+	reduceCredit(amount)
+	{
+		this.accountCredit -= amount;
+	}
+	//static method la method thuoc ve ban than class, giong nhu native vay, khong thuoc ve prototype
+	//instance cua class se khong invoke duoc method nay
+	static sayHi = () => console.log("Hi, I am a static method");
+	
+}
+
+const customer1 = new Customer ( { name : "henry", age : 18, contactMethod : "email" });
+console.log(customer1);
+customer1.addCredit(100);
+console.log(customer1.accountCredit);
+customer1.reduceCredit(150);
+console.log(customer1.accountCredit);
+
+//customer1.sayHi(); //will create error
+Customer.sayHi(); // nhu vay moi dung nhe!
+Customer.sayHey(); // class ke thua tu class, call backward vo tu nha
+Employee.sayHey(); // class ke thua tu class, call backward vo tu nha
+
+//giai thich method :: chia ra lam hai loai :: class method va instance method
+//class method la static nhu sayHi sayHey vay do
+//con instance method thi giong nhu public trong java
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
