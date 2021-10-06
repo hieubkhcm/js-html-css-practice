@@ -154,9 +154,72 @@ Employee.sayHey(); // class ke thua tu class, call backward vo tu nha
 //class method la static nhu sayHi sayHey vay do
 //con instance method thi giong nhu public trong java
 
+///////////////////////////////////////////////////////////////////
+//		create a Family Class
+///////////////////////////////////////////////////////////////////
+
+class FamilyGroup {
+	constructor (parents = [], children = []) {
+		this.parents = parents;
+		this.children = children;
+	}
+	addMember(member){
+		this.children.push(member);
+	}
+}
+
+class FamilyMember{
+	constructor (lastName, firstName, relationship){
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.relationship = relationship;
+	}
+	sayFamilyName(){
+		console.log(`we are the ${this.lastName}s`)
+	}
+}
+
+const smithFamily = {
+	1: ["Smith", "Bill", "father"],
+	2: ["Smith", "Catherine", "mother"],
+	3: ["Smith", "Annie", "daughter"],
+	4: ["Smith", "Will", "son"],
+}
 
 
+const createFamilyGroup = (famArray) => {
+	const famGroup = new FamilyGroup();
+	//console.log(famGroup);
+	for (const prop of famArray) {
+		
+		console.log(prop.relationship);
 
+		if (prop.relationship === "father" || prop.relationship === "mother") {
+			famGroup.parents.push(prop);
+		}
+		else {
+			famGroup.children.push(prop);
+		}
+	}
+	console.log(famGroup);
+	return famGroup;
+}
+
+const createFamiy = (famObj) => {
+	const allMembers = [];
+	for (const prop in famObj) {
+		//console.log(famObj[prop]);
+		const [last, first, relationship] = famObj[prop];
+		const newMember = new FamilyMember(last,first,relationship);
+		allMembers.push(newMember);
+	}
+	console.log(allMembers);
+	const famGroup = createFamilyGroup(allMembers);
+	return famGroup;
+}
+
+const theSmiths = createFamiy(smithFamily);
+console.log(theSmiths);
 
 
 
