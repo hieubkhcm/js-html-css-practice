@@ -48,8 +48,67 @@ function logSummedValue(val) {
 sumUpNumber(10, 14, logSummedValue);
 
 
+////////////////////////////////////////////////////////////
+//	Some REST API simulator
+////////////////////////////////////////////////////////////
+
+const myDiv = document.getElementById("main"); //1. bindind the element div from the DOM HTML
+const myButton = myDiv.querySelector("button"); //2. binding the button to a const
+const myPara = document.getElementById("content");
+myButton.addEventListener("click", myButtonFunction); // 3. add a listener to the event clicking on the button
+
+function myButtonFunction() { // 4. when button is clicked :: invoke the function requestData()
+	console.log("Button Clicked!");
+	requestData(populateDOM); // 7. callback :: populateDOM is injected into the serTimeout and then 
+	//display the data onto the HTML element <p>
+}
+
+//dummy server API 
+const fakeData = {
+	text : "This is some dummy data plays as the role of data that will be sent back from server API",
+	
+}
+function requestData(callBack){ // 5. requestData will send request (skipped) and wait for respond from the server (simulation)
+	//fake server request and respond
+	let data = "loading...";
+	callBack(data);
+	setTimeout( () => { // 6. after 2000ms :: server will repond the data to client
+		//respond from server
+		const data = fakeData.text;
+		callBack(data);
+	}, 2000);
+	
+}
+
+function populateDOM(data){
+	myPara.innerText = data;
+}
+
+///////////////////////////////////////////////
+//		promise								 //
+///////////////////////////////////////////////
+
+// - a function that will pass to another function as a parameter
+//promise is similar callback, acting as a handler
+//a promis exists in these states:
+// pending, fulfilled, rejected
+// can associate a handler with an async action
 
 
+
+//promise theo một nghĩa nào đó được hiểu như là một kỹ thuật lập trình hơn là dạng syntax
+
+const testPromise = new Promise((resolve, reject) => {
+	setTimeout(() => {
+		resolve("promise OK!");
+	}, 1000);
+});
+
+testPromise.then((resolveMessage) => { //then dùng để invoke thằng function nằm bên trong promise
+	console.log(`look like : ${resolveMessage}`);
+});
+
+console.log("I should run after the promise is resolved");
 
 
 
